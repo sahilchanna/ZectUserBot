@@ -30,31 +30,31 @@ USERS_AND_WARNS = {}
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**I only understand on or off**")
+        await message.edit("**ι σɳʅყ υɳԃҽɾʂƚαɳԃ σɳ σɾ σϝϝ**")
         return
     if arg == "off":
         await Zectdb.set_pm(False)
-        await message.edit("**PM Guard Deactivated**")
+        await message.edit("**ρɱ ɠυαɾԃ ԃҽαƈƚιʋαƚҽԃ**")
     if arg == "on":
         await Zectdb.set_pm(True)
-        await message.edit("**PM Guard Activated**")
+        await message.edit("**ρɱ ɠυαɾԃ αƈƚιʋαƚҽԃ**")
 
 
 @app.on_message(filters.command("setlimit", PREFIX) & filters.me)
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**Set limit to what?**")
+        await message.edit("**ʂҽƚ ʅιɱιƚ ƚσ ɯԋαƚ?**")
         return
     await Zectdb.set_limit(int(arg))
-    await message.edit(f"**Limit set to {arg}**")
+    await message.edit(f"**ʅιɱιƚ ʂҽƚ ƚσ {arg}**")
 
 
 @app.on_message(filters.command("setpmmsg", PREFIX) & filters.me)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**What message to set**")
+        await message.edit("**ɯԋαƚ ɱҽʂʂαɠҽ ƚσ ʂҽƚ**")
         return
     if arg == "default":
         await Zectdb.set_permit_message(Zectdb.PMPERMIT_MESSAGE)
