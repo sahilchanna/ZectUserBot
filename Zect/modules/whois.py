@@ -23,10 +23,10 @@ def ReplyCheck(message: Message):
 
 infotext = (
     "**[{full_name}](tg://user?id={user_id})**\n"
-    " > UserID: `{user_id}`\n"
-    " > First Name: `{first_name}`\n"
-    " > Last Name: `{last_name}`\n"
-    " > Username: @{username}\n"
+    " ✴️υʂҽɾ ιԃ : ⚔️`{user_id}`⚔️\n"
+    " ✴️ϝιɾʂƚ ɳαɱҽ: ⚔️`{first_name}`⚔️\n"
+    " ✴️ʅαʂƚ ɳαɱҽ: ⚔️`{last_name}`⚔️\n"
+    " ✴️υʂҽɾɳαɱҽ: ⚔️@{username}⚔️\n"
 )
 
 
@@ -103,5 +103,5 @@ async def id(client, message):
     except PeerIdInvalid:
         await message.edit("I don't know that User.")
         return
-    text = "**User ID**: `{}`\n**Chat ID**: `{}`".format(user.id, chat_id)
+    text = "**✴️υʂҽɾ ιԃ✴️**: `{}`\n**Chat ID**: `{}`".format(user.id, chat_id)
     await message.edit(text)
