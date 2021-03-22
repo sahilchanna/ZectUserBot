@@ -58,24 +58,24 @@ async def setpmmsg(client, message):
         return
     if arg == "default":
         await Zectdb.set_permit_message(Zectdb.PMPERMIT_MESSAGE)
-        await message.edit("**Anti_PM message set to default**.")
+        await message.edit("**αɳƚι_ρɱ ɱҽʂʂαɠҽ ʂҽƚ ƚσ ԃҽϝαυʅƚ**.")
         return
     await Zectdb.set_permit_message(f"`{arg}`")
-    await message.edit("**Custom anti-pm message set**")
+    await message.edit("**ƈυʂƚσɱ αɳƚι-ρɱ ɱҽʂʂαɠҽ ʂҽƚ**")
 
 
 @app.on_message(filters.command("setblockmsg", PREFIX) & filters.me)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**What message to set**")
+        await message.edit("**ɯԋαƚ ɱҽʂʂαɠҽ ƚσ ʂҽƚ**")
         return
     if arg == "default":
         await Zectdb.set_block_message(Zectdb.BLOCKED)
-        await message.edit("**Block message set to default**.")
+        await message.edit("**Ⴆʅσƈƙ ɱҽʂʂαɠҽ ʂҽƚ ƚσ ԃҽϝαυʅƚ**.")
         return
     await Zectdb.set_block_message(f"`{arg}`")
-    await message.edit("**Custom block message set**")
+    await message.edit("**ƈυʂƚσɱ Ⴆʅσƈƙ ɱҽʂʂαɠҽ ʂҽƚ**")
 
 
 @app.on_message(filters.command("allow", PREFIX) & filters.me & filters.private)
@@ -83,7 +83,7 @@ async def allow(client, message):
     chat_id = message.chat.id
     pmpermit, pm_message, limit, block_message = await Zectdb.get_pm_settings()
     await Zectdb.allow_user(chat_id)
-    await message.edit(f"**I have allowed [you](tg://user?id={chat_id}) to PM me.**")
+    await message.edit(f"**ι ԋαʋҽ αʅʅσɯҽԃ [ყσυ](tg://user?id={chat_id}) ƚσ ρɱ ɱҽ.**")
     async for message in app.search_messages(
         chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
     ):
@@ -95,7 +95,7 @@ async def allow(client, message):
 async def deny(client, message):
     chat_id = message.chat.id
     await Zectdb.deny_user(chat_id)
-    await message.edit(f"**I have denied [you](tg://user?id={chat_id}) to PM me.**")
+    await message.edit(f"**ι ԋαʋҽ ԃҽɳιҽԃ [ყσυ](tg://user?id={chat_id}) ƚσ ρɱ ɱҽ. **")
 
 
 @app.on_message(
