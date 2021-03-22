@@ -55,8 +55,9 @@ def get_readable_time(seconds: int) -> str:
 async def alive(_, m):
     start_time = time.time()
     uptime = get_readable_time((time.time() - StartTime))
-    reply_msg =  f"__**ι αɱ αʅιʋҽ ʂιɾ**__"
-    reply_msg += f"**[ᏬᏒ ᏰᎧᏖ ᏕᎥᏒ](https://github.com/okay-retard/ZectUserBot)**\n"
+    reply_msg =  f"__**ι αɱ αʅιʋҽ ʂιɾ**__\n"
+    reply_msg += f"__**ԋσɯ ɾ υ ʂιɾ**__\n\n"
+    reply_msg += f"**[ᎧᏬᏒ ᏰᎧᏖ](https://github.com/okay-retard/ZectUserBot)**\n"
     reply_msg += f"__Python__: `{__python_version__}`\n"
     reply_msg += f"__@Pyrogram version__: `{__pyro_version__}`\n"
     end_time = time.time()
@@ -69,7 +70,8 @@ async def alive(_, m):
 @app.on_message(filters.command("ping", PREFIX) & filters.me)
 async def pingme(_, message: Message):
     start = datetime.now()
-    await message.edit("`Pong!🔥🔥`")
+    await message.edit("`🔥🔥⚔️Pong!⚔️🔥🔥`")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"**Pong!🔥🔥**\n`{m_s} ms`")
+    await message.edit(f"**🔥🔥⚔️Pong!⚔️🔥🔥**\n\n`🛡️{m_s}🛡️ ms🌋`")
+⚔️
