@@ -63,7 +63,7 @@ async def alive(_, m):
     reply_msg += f"__Python__: `{__python_version__}`\n"
     reply_msg += f"__Чѳкѳнаѫа ➟ version__: `{__pyro_version__}`\n"
     end_time = time.time()
-    reply_msg += f"__Чѳкѳнаѫа ➟ uptime__: {uptime}"
+    reply_msg += f"__Чѳкѳнаѫа ➟ uptime__: {uptime}\n"
     reply_msg += f"**╰────────────────**\n" 
     video = "https://telegra.ph/file/94420a12eec35e6dda0e3.mp4" 
     await m.delete()
