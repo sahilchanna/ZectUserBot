@@ -15,6 +15,7 @@ CMD_HELP.update(
 『 **Alive** 』
   `alive` -> Show off to people with your bot using this command.
   `ping` -> Shows you the response speed of the bot.
+  `yokohama`-> Shows you the response speed of the bot.
 """
     }
 )
@@ -55,39 +56,39 @@ def get_readable_time(seconds: int) -> str:
 async def alive(_, m):
     start_time = time.time()
     uptime = get_readable_time((time.time() - StartTime))
-    reply_msg =  f"__**ι αɱ αʅιʋҽ ʂιɾ**__\n"
-    reply_msg += f"__**ԋσɯ ɾ υ ʂιɾ**__\n\n"
-    reply_msg += f"**ᎧᏬᏒ ᏰᎧᏖ**\n"
+    reply_msg = f"**╭──────────────────**\n"
+    reply_msg +=  f"__**ι αɱ αʅιʋҽ ʂιɾ**__\n"
+    reply_msg += f"__**ԋσɯ ɾ υ ʂιɾ**__\n"
+    reply_msg += f"__**Чѳкѳнаѫа**__\n"
     reply_msg += f"__Python__: `{__python_version__}`\n"
-    reply_msg += f"__@Pyrogram version__: `{__pyro_version__}`\n"
+    reply_msg += f"__Чѳкѳнаѫа ➟ version__: `{__pyro_version__}`\n"
+    reply_msg += f"**╰──────────────────**\n"
     end_time = time.time()
-    reply_msg += f"__Zect uptime__: {uptime}"
-    photo = "https://telegra.ph/file/ed851ecd3803b3b411594.mp4"
+    reply_msg += f"__Чѳкѳнаѫа ➟ uptime__: {uptime}"
+    video = "https://telegra.ph/file/ed851ecd3803b3b411594.mp4"
     await m.delete()
-    await app.send_photo(m.chat.id, photo, caption=reply_msg)
+    await app.send_video(m.chat.id, video , caption=reply_msg)
 
 
 @app.on_message(filters.command("ping", PREFIX) & filters.me)
 async def pingme(_, message: Message):
     start = datetime.now()
-    await message.edit("`Pong!`")
+    await message.edit("`ρσиg!`")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"**Pong!**\n\n`{m_s}ms`")
+    await message.edit(f"**ρσиg!**\n\n`{m_s}ms`")
 
 
 @app.on_message(filters.command("yokohama", PREFIX) & filters.me)
-async def _(event):
-    start = dt.now()
-    x = await eor(event, "`Pong!`\n ⪻ⓦⒶⒾⓣ⪼ ")
-    if event.fwd_from:
-        return
-    end = dt.now()
-    ms = (end - start).microseconds / 1000
+async def pingme(_, message:Message):
+    start = datetime.now()
+    await message.edit(event, "`ρσиg!`\n ⪻ⓦⒶⒾⓣ⪼ ")
+    end = datetime.now()
+    m_s = (end - start).microseconds / 1000
     uptime = grt((time.time() - start_time))
-    await x.edit(f"**Pong** `{ms}ms`\n**➥Uptime** - `{uptime}`\n**➥✯☫уσкσнαмα вσт☫ ✯**")
+    await message.edit(f"**ρσиg ➟ ** ` {m_s}ms`\n**➥υρтιмє** - `{uptime}`\n**➥ ✯☫Чѳкѳнаѫа вσт☫ ✯**")
 
 @app.on_message(filters.command("cmds", PREFIX) & filters.me)
-async def cmds(event):
-    await allcmds(event)
+async def cmds(_, m):
+    await allcmds(_, m)
 
