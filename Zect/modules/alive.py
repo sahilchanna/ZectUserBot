@@ -57,12 +57,12 @@ async def alive(_, m):
     uptime = get_readable_time((time.time() - StartTime))
     reply_msg =  f"__**ι αɱ αʅιʋҽ ʂιɾ**__\n"
     reply_msg += f"__**ԋσɯ ɾ υ ʂιɾ**__\n\n"
-    reply_msg += f"**[ᎧᏬᏒ ᏰᎧᏖ](https://github.com/okay-retard/ZectUserBot)**\n"
+    reply_msg += f"**ᎧᏬᏒ ᏰᎧᏖ**\n"
     reply_msg += f"__Python__: `{__python_version__}`\n"
     reply_msg += f"__@Pyrogram version__: `{__pyro_version__}`\n"
     end_time = time.time()
     reply_msg += f"__Zect uptime__: {uptime}"
-    photo = "https://telegra.ph/file/2231491a5eb6585fda7d0.jpg"
+    photo = "https://telegra.ph/file/ed851ecd3803b3b411594.mp4"
     await m.delete()
     await app.send_photo(m.chat.id, photo, caption=reply_msg)
 
@@ -70,8 +70,24 @@ async def alive(_, m):
 @app.on_message(filters.command("ping", PREFIX) & filters.me)
 async def pingme(_, message: Message):
     start = datetime.now()
-    await message.edit("`🔥🔥⚔️Pong!⚔️🔥🔥`")
+    await message.edit("`Pong!`")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"**🔥🔥⚔️Pong!⚔️🔥🔥**\n\n`🛡️{m_s}🛡️ ms🌋`")
+    await message.edit(f"**Pong!**\n\n`{m_s}ms`")
+
+
+@app.on_message(filters.command("yokohama", PREFIX) & filters.me)
+async def _(event):
+    start = dt.now()
+    x = await eor(event, "`Pong!`\n ⪻ⓦⒶⒾⓣ⪼ ")
+    if event.fwd_from:
+        return
+    end = dt.now()
+    ms = (end - start).microseconds / 1000
+    uptime = grt((time.time() - start_time))
+    await x.edit(f"**Pong** `{ms}ms`\n**➥Uptime** - `{uptime}`\n**➥✯☫уσкσнαмα вσт☫ ✯**")
+
+@app.on_message(filters.command("cmds", PREFIX) & filters.me)
+async def cmds(event):
+    await allcmds(event)
 
