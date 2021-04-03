@@ -85,8 +85,7 @@ async def pingme(_, message:Message):
     await message.edit(event, "`ρσиg!`\n ⪻ⓦⒶⒾⓣ⪼ ")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    uptime = grt((time.time() - start_time))
-    await message.edit(f"**ρσиg ➟ ** ` {m_s}ms`\n**➥υρтιмє** - `{uptime}`\n**➥ ✯☫Чѳкѳнаѫа вσт☫ ✯**")
+    await message.edit(f"**ρσиg ➟ ** ` {m_s}ms`\n**➥ ✯☫Чѳкѳнаѫа вσт☫ ✯**")
 
 @app.on_message(filters.command("cmds", PREFIX) & filters.me)
 async def cmds(_, m):
