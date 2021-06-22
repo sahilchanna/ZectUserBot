@@ -13,7 +13,7 @@ CMD_HELP.update(
     {
         "Alive": """
 『 **Alive** 』
-  `zect` -> Show off to people with your bot using this command.
+  `alive` -> Show off to people with your bot using this command.
   `ping` -> Shows you the response speed of the bot.
   `zect` -> Show off to people with your bot using this command.
 """
