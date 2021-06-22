@@ -15,7 +15,7 @@ CMD_HELP.update(
 『 **Alive** 』
   `zect` -> Show off to people with your bot using this command.
   `ping` -> Shows you the response speed of the bot.
-  `yokohama`-> Shows you the response speed of the bot.
+  `zect_ping`-> Shows you the response speed of the bot.
 """
     }
 )
@@ -69,7 +69,7 @@ async def alive(_, m):
     
 
 
-@app.on_message(filters.command("yokohama", PREFIX) & filters.me)
+@app.on_message(filters.command("zect_ping", PREFIX) & filters.me)
 async def pingme(_, message:Message):
     start = datetime.now()
     await message.edit(event, "`ρσиg!`\n ⪻ⓦⒶⒾⓣ⪼ ")
