@@ -84,6 +84,13 @@ async def alive(_, m):
     await app.send_video(m.chat.id, photo , caption=reply_msg)
     
 
+@app.on_message(filters.command("ping", PREFIX) & filters.me)
+async def pingme(_, message: Message):
+    start = datetime.now()
+    await message.edit("`🔸Pong!🔸`")
+    end = datetime.now()
+    m_s = (end - start).microseconds / 1000
+    await message.edit(f"**Pong!⏩**\n`{m_s} ms`")
 
 
 
