@@ -73,7 +73,7 @@ async def alive(_, m):
     start_time = time.time()
     uptime = get_readable_time((time.time() - StartTime))
     reply_msg = f"**╭────────────────**\n"
-    reply_msg += f"__**The Bot**__`{https://github.com/sahilchanna/ZectUserBot}`\n"
+    reply_msg += f"__**The Bot**__\n"
     reply_msg += f"__Python__ ➟`{__python_version__}`\n"
     reply_msg += f"__pyro version__➟`{__pyro_version__}`\n"
     end_time = time.time()
