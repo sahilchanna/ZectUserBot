@@ -7,7 +7,7 @@ HELP.update(
     {
         "**🔸Admin Tools**": "__ban, unban, promote, demote, kick, mute, unmute, gmute, ungmute, pin, purge, del, invite__",
         "**🔸AFK**": "__afk, unafk__",
-        "**🔸Alive**": "__alive, ping__",
+        "**🔸Alive**": "__alive, zect , zect ping__",
         "**🔸Developer**": "__eval, term__",
         "**🔸Misc**": "__paste, tr, whois, id__",
         "**🔸Notes**": "__save, get, clear, clearall, notes__",
