@@ -13,7 +13,7 @@ CMD_HELP.update(
     {
         "Alive": """
 『 **Alive** 』
-  `alive` -> Show off to people with your bot using this command.
+  `zect` -> Show off to people with your bot using this command.
   `ping` -> Shows you the response speed of the bot.
   `yokohama`-> Shows you the response speed of the bot.
 """
@@ -52,18 +52,16 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-@app.on_message(filters.command("alive", PREFIX) & filters.me)
+@app.on_message(filters.command("zect", PREFIX) & filters.me)
 async def alive(_, m):
     start_time = time.time()
     uptime = get_readable_time((time.time() - StartTime))
     reply_msg = f"**╭────────────────**\n"
-    reply_msg +=  f"__**ι αɱ αʅιʋҽ ʂιɾ**__\n"
-    reply_msg += f"__**ԋσɯ ɾ υ ʂιɾ**__\n"
-    reply_msg += f"__**Чѳкѳнаѫа**__\n"
-    reply_msg += f"__Python__: `{__python_version__}`\n"
-    reply_msg += f"__Чѳкѳнаѫа ➟ version__: `{__pyro_version__}`\n"
+    reply_msg += f"__**zect**__\n"
+    reply_msg += f"__Python__ ➟`{__python_version__}`\n"
+    reply_msg += f"__zect version__➟`{__pyro_version__}`\n"
     end_time = time.time()
-    reply_msg += f"__Чѳкѳнаѫа ➟ uptime__: {uptime}\n"
+    reply_msg += f"__zect uptime__➟ {uptime}\n"
     reply_msg += f"**╰────────────────**\n" 
     video = "https://telegra.ph/file/94420a12eec35e6dda0e3.mp4" 
     await m.delete()
@@ -77,5 +75,5 @@ async def pingme(_, message:Message):
     await message.edit(event, "`ρσиg!`\n ⪻ⓦⒶⒾⓣ⪼ ")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await message.edit(f"**ρσиg ➟ ** ` {m_s}ms`\n**➥ ✯☫Чѳкѳнаѫа вσт☫ ✯**")
+    await message.edit(f"**ρσиg ➟ ** ` {m_s}ms`\n**➥ ✯☫вσт☫ ✯**")
 
