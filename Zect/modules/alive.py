@@ -15,7 +15,7 @@ CMD_HELP.update(
 『 **Alive** 』
   `zect` -> Show off to people with your bot using this command.
   `ping` -> Shows you the response speed of the bot.
-  `zect_ping`-> Shows you the response speed of the bot.
+  `zect` -> Show off to people with your bot using this command.
 """
     }
 )
@@ -57,7 +57,7 @@ async def alive(_, m):
     start_time = time.time()
     uptime = get_readable_time((time.time() - StartTime))
     reply_msg = f"**╭────────────────**\n"
-    reply_msg += f"__**zect**__\n"
+    reply_msg += f"__**zect**__`{https://github.com/sahilchanna/ZectUserBot}`\n"
     reply_msg += f"__Python__ ➟`{__python_version__}`\n"
     reply_msg += f"__zect version__➟`{__pyro_version__}`\n"
     end_time = time.time()
@@ -68,12 +68,22 @@ async def alive(_, m):
     await app.send_video(m.chat.id, video , caption=reply_msg)
     
 
+@app.on_message(filters.command("alive", PREFIX) & filters.me)
+async def alive(_, m):
+    start_time = time.time()
+    uptime = get_readable_time((time.time() - StartTime))
+    reply_msg = f"**╭────────────────**\n"
+    reply_msg += f"__**The Bot**__`{https://github.com/sahilchanna/ZectUserBot}`\n"
+    reply_msg += f"__Python__ ➟`{__python_version__}`\n"
+    reply_msg += f"__pyro version__➟`{__pyro_version__}`\n"
+    end_time = time.time()
+    reply_msg += f"__uptime__➟ {uptime}\n"
+    reply_msg += f"**╰────────────────**\n" 
+    photo = "https://telegra.ph/file/3f443150c22b6bc213cd6.jpg" 
+    await m.delete()
+    await app.send_video(m.chat.id, photo , caption=reply_msg)
+    
 
-@app.on_message(filters.command("zect_ping", PREFIX) & filters.me)
-async def pingme(_, message:Message):
-    start = datetime.now()
-    await message.edit(event, "`ρσиg!`\n ⪻ⓦⒶⒾⓣ⪼ ")
-    end = datetime.now()
-    m_s = (end - start).microseconds / 1000
-    await message.edit(f"**ρσиg ➟ ** ` {m_s}ms`\n**➥ ✯☫вσт☫ ✯**")
+
+
 
